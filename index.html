@@ -1,0 +1,831 @@
+<head>
+    <style>
+    *,html{
+width:100%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body{
+overflow-x:hidden;
+font-family: 'Exo 2', sans-serif;
+}
+/* Thin Scrollbar */
+:root{
+  scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+  scrollbar-width: thin !important;
+}
+::-webkit-scrollbar-corner {
+    background: #999;
+}
+em{
+font-style:normal;
+font-family: 'Pirata One', cursive;
+color:#70412e;
+}
+.title{
+font-family: 'Pirata One', cursive;
+}
+.sub-title{
+display:block;
+font-size:13px;
+color:gray;
+}
+.btn1{
+outline:none;
+padding:10px 20px;
+border-radius:20px;
+color:#fff;
+transition:0.5s;
+width:150px;
+background:#70412e;
+border:1px solid #70412e;
+box-shadow:0px 1px 1px 0px #000;
+}
+.btn1:hover{
+background:transparent;
+border:1px solid #fff;
+box-shadow:0px 0px 0px 0px #fff;
+}
+
+
+.logo{
+position:fixed;
+font-family: 'Pacifico', cursive;
+color:#fff;
+z-index:11111;
+top:10px;
+left:20px;
+font-size:26px;
+cursor:pointer;
+width:200px;
+}
+.logo img{
+left:30px;
+top:10px;
+width:30px;
+height:40px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.logo:hover img {
+  transform: scale(0.9, 1) rotatey(-10deg) translatey(0px);
+  animation: 2.2s scaling cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transform-origin: 50% 100%;
+  color: #fff;
+  text-decoration:none;
+  top: 10%;
+  transform-style: preserve-3d;
+  
+}
+.wrapper img:nth-child(1) {
+  animation-delay: 140ms;
+}
+
+@keyframes scaling {
+  20% {
+    
+    transform: scale(0.9, 1) rotatey(-10deg);
+  }
+  40% {
+    transform: scale(0.9, 2) translatey(16px);
+    
+  }
+  60% {
+    transform: scale(0.9, 1) rotatey(-5deg);
+    
+  }
+  80% {
+    transform: scale(0.9, 2) translatey(16px);
+    
+  }
+}
+@keyframes jump {
+  20% {
+    transform: translatey(0) scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: translatey(-50px) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translatey(0) scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: translatey(-50px) scale(1);
+    opacity: 1;
+  }
+}
+ a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+ a:hover {
+  color: #f1f1f1;
+}
+
+ .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.Navicon{
+position:fixed;
+right:10px;
+top:10px;
+z-index:1000;
+width:50px;
+color:#fff;
+border:1px solid #fff;
+width:35px;
+padding:3px;
+}
+
+@media screen and (max-height: 450px) {
+   a {font-size: 18px;}
+}
+
+/*CAROUSEL*/
+#myCarousel h1{
+position:absolute;
+z-index:1;
+display:flex;
+align-items:center;
+justify-content: center;
+top:30%;
+font-family: 'Pirata One', cursive;
+color:#fff;
+}
+#myCarousel .sub-title,#myCarousel .btn1{
+color:#fff;
+position:absolute;
+z-index:1;
+display:flex;
+align-items:center;
+justify-content: center;
+top:30%;
+}
+#myCarousel .btn1{
+position:absolute;
+top:50%;
+left:45%;
+}
+.carousel-inner{
+max-height:100vh;
+width:100%;
+}
+#myCarousel img{
+height:100%;
+width:100%;
+
+}
+@media (max-width:600px){
+#myCarousel .btn1{
+position:absolute;
+left:30%;
+top:55%;
+}
+.carousel-inner{
+max-height:70vh;
+width:100%;
+}
+#myCarousel img{
+height:70vh;
+width:100%;
+}
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.2, 1.2);
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.2, 1.2);
+  }
+}
+.carousel-inner .item > img {
+  -webkit-animation: zoom 10s;
+  animation: zoom 10s;
+}
+
+/*SECTION1*/
+.container{
+width:95%;
+display:flex;
+align-items:center;
+justify-content: center;
+}
+.section1{
+width:100%;
+display:flex;
+align-items:center;
+justify-content: center;
+position:relative;
+top:-50px;
+height:35vh;
+overflow-x:auto;
+scrollbar-width:none;
+scroll-behavior: smooth;
+}
+.section1 .card{
+width:200px;
+height:150px;
+padding:30px;
+border-radius:5px;
+box-shadow:0px 6px 16px -6px rgba(1,1,1,0.4);
+display:inline-block;
+margin:0px 10px;
+font-family: 'Yeon Sung', cursive;
+text-align:center;
+background:#fff;
+}
+.section1 .card img{
+width:100%;
+height:100%;
+padding:15px;
+pointer-events:none;
+}
+
+@media (max-width:600px){
+.section1{
+height:40vh;
+position:relative;
+top:0px;
+}
+.section1 .card{
+min-width:300px;
+}
+}
+
+
+
+/*SECTION2*/
+.content{
+width:100%;
+display:block;
+background: linear-gradient(#ffc845, #fe3859);
+-webkit-background-size: cover;
+}
+.content table{
+width:85%;
+}
+.content table td{
+width:50%;
+text-align:left;
+}
+.content .title{
+color:#fff;
+}
+.content em{
+color:#190e0d;
+}
+.content p{
+color:#fff;
+}
+.content table td:nth-child(2){
+padding-left:40px;
+}
+@media (max-width:600px){
+.content{
+padding:10px 0px;
+}
+.content table{
+width:90%;
+}
+.content table td:nth-child(2){
+padding-left:10px;
+}
+.content table td{
+width:100%;
+display:block;
+}
+}
+
+
+
+
+/*SECTION3*/
+.section3{
+width:90%;
+height:80vh;
+}
+.section3 table{
+width:100%;
+}
+.section3 table td{
+width:50%;
+}
+.section3 table td img{
+width:200px;
+height:200px;
+pointer-events:none;
+}
+.section3 table td:nth-child(2){
+padding-left:50px;
+}
+.section3 .carousel-control{
+background:transparent;
+}
+.section3 .glyphicon{
+color:#000;
+}
+@media (max-width:600px){
+.section3 table td{
+width:100%;
+display:block;
+}
+.section3 table td img{
+max-width:200px;
+max-height:200px;
+}
+.section3 table td:nth-child(2){
+padding-left:20px;
+}
+}
+
+
+
+
+/*SECTION4*/
+.section4{
+width:100%;
+background:#f9f9f9;
+margin-top:5%;
+}
+.section4 section{
+display:inline-block;
+width:30%;
+padding:2%;
+}
+.section4 .fa{
+font-size:4em;
+color:#fe3859;
+}
+.section4 p{
+color:gray;
+font-size:1.5em;
+}
+.section4{
+background-image:url('https://i.ibb.co/nPyxCcg/section3.png');
+background-size:80px 100%;
+background-repeat:no-repeat;
+}
+@media (max-width:600px){
+.section4 section{
+width:block;
+width:100%;
+}
+}
+
+
+
+
+/*SECTION5*/
+.section5{
+width:100%;
+margin-top:5%;
+}
+.section5 table{
+width:90%;
+}
+.section5 table td{
+width:50%;
+}
+.section5 h3{
+text-align:center;
+}
+.section5 ul li{
+padding-top:10px;
+padding-bottom:10px;
+border-top:1px solid gray;
+border-bottom:1px solid gray;
+list-style:none;
+height:100px;
+}
+.section5 table td:nth-child(1) p{
+text-align:right;
+}
+.section5 ul li img{
+padding-right:20px;
+}
+.section5 ul li b{
+text-align:right;
+}
+.section5 ul li img{
+width:20%;
+height:70px;
+float:left;
+}
+.accordation {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075), 0 2px 4px rgba(0, 0, 0, 0.0375);
+  padding: 30px;
+}
+
+.panel-group {
+  margin-bottom: 0;
+}
+.panel-group .panel {
+  border-radius: 0;
+  box-shadow: none;
+}
+.panel-group .panel .panel-heading {
+  padding: 0;
+}
+.panel-group .panel .panel-heading h4 a {
+  background: #f8f8f8;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px;
+  text-decoration: none;
+  transition: 0.15s all ease-in-out;
+}
+.panel-group .panel .panel-heading h4 a:hover, .panel-group .panel .panel-heading h4 a:not(.collapsed) {
+  background: #fff;
+  transition: 0.15s all ease-in-out;
+}
+.panel-group .panel .panel-heading h4 a:not(.collapsed) i:before {
+  content: "";
+}
+.panel-group .panel .panel-heading h4 a i {
+  color: #999;
+  text-align:right;
+}
+.panel-group .panel .panel-body {
+  padding-top: 0;
+}
+.panel-group .panel .panel-heading + .panel-collapse > .list-group,
+.panel-group .panel .panel-heading + .panel-collapse > .panel-body {
+  border-top: none;
+}
+.panel-group .panel + .panel {
+  border-top: none;
+  margin-top: 0;
+}
+@media (max-width:1100px){
+.section5 table td{
+width:100%;
+display:block;
+}
+.accordation{
+padding:10px;
+}
+}
+
+
+
+
+
+/*FOOTER*/
+.footer{
+width:100%;
+padding:50px 0px;
+background-image:url(https://i.ibb.co/7N4wH4y/footer.jpg);
+background-size:100% 100%;
+text-align:center;
+}
+.footer i{
+color:#000;
+padding:10px;
+height:40px;
+font-size:20px;
+width:40px;
+margin:10px;
+border-radius:50%;
+background:#fff;
+transition:0.5s;
+}
+.footer i:hover.fa-facebook{
+background:#007bff;
+color:#fff;
+}
+.footer i:hover.fa-instagram{
+background:#fd375a;
+color:#fff;
+}
+.footer i:hover.fa-envelope{
+background:#cc8620;
+color:#fff;
+}
+.footer i:hover.fa-phone{
+background:#70412e;
+color:#fff;
+}
+.footer p{
+color:#fff;
+}
+.footer .fa-heart-o{
+color:#fd375a;
+background:none;
+}
+
+
+
+    </style>
+<title>Dessert Room || Bakery</title>
+
+<!--META TAGS-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!--BOOTSTRAP PLUGIN-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--EXTERNAL CSS-->
+<link rel="shortcut icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+
+<!--FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Kanit:wght@500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<h1>Welcome To LAPARASIENNE RESTAURANT</h1>
+
+<button class="btn1">Contact Us</button>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="https://i.ibb.co/KbzLkR4/slide1.jpg" alt="Dessert">
+    </div>
+    <div class="item">
+      <img src="https://i.ibb.co/0Vh11pM/slide3.jpg" alt="Dessert">
+    </div>
+    <div class="item">
+      <img src="https://i.ibb.co/8sSs6QR/slide2.jpg" alt="Dessert">
+    </div>
+  </div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container">
+<!--CARDS-->
+<div class="section1">
+<div class="card">
+<h4>Wheet Bread</h4>
+<img src="https://i.ibb.co/k9Sp387/01.png">
+</div>
+
+<div class="card">
+<h4>Pastry</h4>
+<img src="https://i.ibb.co/fQ0WVZ6/02.png">
+</div>
+
+<div class="card">
+<h4>Cookies</h4>
+<img src="https://i.ibb.co/z8P6RQr/03.png">
+</div>
+
+<div class="card">
+<h4>Cup Cake</h4>
+<img src="https://i.ibb.co/GvmM38P/04.jpg">
+</div>
+
+<div class="card">
+<h4>Cake's</h4>
+<img src="https://i.ibb.co/KyV6nyG/05.png">
+</div>
+</div>
+</div>
+
+
+<!--SECTION2-->
+<center>
+<div class="content">
+<table>
+<tr>
+<td>
+<img src="https://i.ibb.co/sWkBW75/about.png" alt="About Us">
+</td>
+<td>
+<h1 class="title">Welcome To <em>laparasienne restaurant</em></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<button class="btn1">Contact Us</button>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+<!--SECTION3-->
+<div class="section3">
+<h1>New Products<span class="sub-title">Lorem ipsum dolor sit amet</span></h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators" hidden>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <table>
+      <tr>
+      <td>
+      <img src="https://i.ibb.co/z8P6RQr/03.png" alt="Dessert Bakery">
+      </td>
+      <td>
+      <h3 class="title">Cookies</h3>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <div class="item">
+       <table>
+      <tr>
+      <td>
+      <img src="https://i.ibb.co/fQ0WVZ6/02.png" alt="Dessert Bakery">
+      </td>
+      <td>
+      <h3 class="title">Wheet Pastry</h3>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <div class="item">
+       <table>
+      <tr>
+      <td>
+      <img src="https://i.ibb.co/KyV6nyG/05.png" alt="Dessert Bakery">
+      </td>
+      <td>
+      <h3 class="title">Chocolates Cakes</h3>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--SECTION4-->
+<div class="section4">
+<section>
+<i class="fa fa-heart-o"></i>
+<h3>Made With Love</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</section>
+
+<section>
+<i class="fa fa-birthday-cake"></i>
+<h3>Seasonal Pastries</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</section>
+
+<section>
+<i class="fa fa-calendar"></i>
+<h3>Event Catering</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</section>
+</div>
+
+
+
+
+
+<!--SECTION5-->
+<div class="section5">
+<table>
+<tr>
+<td>
+<h3>Our Latest Products</h3>
+<ul>
+<li>
+<img src="https://i.ibb.co/k9Sp387/01.png" alt="Blog">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+<p>1-1-2021</p>
+</li>
+<li>
+<img src="https://i.ibb.co/k9Sp387/01.png" alt="Blog">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,  
+<p>1-1-2021</p>
+</li>
+<li>
+<img src="https://i.ibb.co/k9Sp387/01.png" alt="Blog">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,  
+<p>1-1-2021</p>
+</li>
+<li>
+<img src="https://i.ibb.co/k9Sp387/01.png" alt="Blog">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,  
+<p>1-1-2021</p>
+</li>
+</ul>
+
+</td>
+<td>
+<h3>Frequently asked questions</h3>
+<div class="container">
+  <div class="accordation">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="headingOne" role="tab">
+          <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Question #1<i class="pull-right fa fa-plus"></i></a></h4>
+        </div>
+        <div class="panel-collapse collapse in" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" id="headingTwo" role="tab">
+          <h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Question #2<i class="pull-right fa fa-plus"></i></a></h4>
+        </div>
+        <div class="panel-collapse collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" id="headingThree" role="tab">
+          <h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Question #3<i class="pull-right fa fa-plus"></i></a></h4>
+        </div>
+        <div class="panel-collapse collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</center>
+
+
+<footer>
+<div class="footer">
+<i class="fa fa-facebook"></i> <i class="fa fa-instagram"></i> <i class="fa fa-envelope"></i> <i class="fa fa-phone"></i>
+
+</div>
+</footer>
+    <!--JAVASCRIPT-->
+<script src="js/custom.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
